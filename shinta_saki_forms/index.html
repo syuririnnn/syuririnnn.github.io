@@ -1,1 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <title>出欠フォーム</title>
+    <link rel="stylesheet" href="index_sheet1.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><!---スマホでの表示が安定する--->
+    <link rel="stylesheet" href="mobile.css" media="(max-width: 700px)" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Kaisei+Decol&family=Klee+One&family=Kosugi+Maru&family=Lobster&family=Shippori+Antique+B1&family=Tangerine:wght@400;700&family=Zen+Antique&family=Zen+Maru+Gothic&family=Zen+Old+Mincho&display=swap" rel="stylesheet">
+</head>
+    <body>
 
+        <h1>Theinvitation</h1>
+       
+
+        <form id="rsvpForm">
+            <div class="content">
+
+
+
+                <!-- 出欠 -->
+                <article>ご出欠</article>
+                <div class="button-wrapper">
+                    <div class="button">
+                        <label><input type="radio" name="attendance" id="attendance_yes" value="出席"> ご出席</label>
+                        <label><input type="radio" name="attendance" id="attendance_no" value="欠席"> ご欠席</label>
+                    </div>
+                </div>
+                <article>ご芳名</article>
+                <article><input type="text" class="underline-box" name="main_name" placeholder="山田 太郎"></article>
+
+                <!-- 出席のときだけ表示されるフォーム -->
+                <div id="rsvpForm2" style="display: none; margin-top: 20px;">
+
+
+
+                    <article>ご芳名(フリガナ)</article>
+                    <article><input type="text" class="underline-box" name="main_kana" placeholder="ヤマダ タロウ"></article>
+
+                    <article>ご住所</article>
+                    <article><input type="text" class="underline-box" name="main_address" placeholder="〒000-0000"></article>
+                    <article><input type="text" class="underline-box" name="address"></article>
+
+                    <article>お電話</article>
+                    <article><input type="tel" class="underline-box" name="phone"></article>
+
+                    <div class="br">
+                        <div>*お連れの方がいらっしゃる場合は</div>
+                        <div>下記の＋ボタンにて追加のご入力をお願いします</div>
+                    </div>
+
+                    <div id="guest_list"></div>
+
+                    <button type="button" id="add_guest_btn">＋ お連れ様を追加</button>
+
+
+                </div>
+                
+                <div class="message">
+                    <p>
+                        ♡新郎新婦へのメッセージ♡
+                    </p>
+                    <p>
+                        <textarea class="message-box" name="message" placeholder="message"></textarea>
+                    </p>
+
+                </div>
+            </div>
+
+            <button type="submit" class="btn">送信する</button>
+        </form>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+
+                /* 出欠でフォーム表示切り替え */
+                const yes = document.getElementById("attendance_yes");
+                const no = document.getElementById("attendance_no");
+                const form2 = document.getElementById("rsvpForm2");
+
+                yes.addEventListener("change", () => {
+                    form2.style.display = "block";
+                });
+
+                no.addEventListener("change", () => {
+                    form2.style.display = "none";
+                });
+
+                /* お連れ様追加 */
+                let guestCount = 0;
+
+                const addBtn = document.getElementById("add_guest_btn");
+                const guestList = document.getElementById("guest_list");
+
+                addBtn.addEventListener("click", () => {
+                    guestCount++;
+
+                    const guestBlock = document.createElement("div");
+                    guestBlock.className = "guest_block";
+                    guestBlock.style.marginTop = "15px";
+
+                    guestBlock.innerHTML = `
+                        <h4>お連れ様 ${guestCount} 人目</h4>
+
+                        <div class="guest_field">
+                            <label>ご芳名：</label>
+                            <input type="text" name="guest${guestCount}_name" placeholder="山田 花子">
+                        </div>
+
+                        <div class="guest_field">
+                            <label>ご芳名（フリガナ）：</label>
+                            <input type="text" name="guest${guestCount}_kana" placeholder="ヤマダ ハナコ">
+                        </div>
+
+                        <div class="guest_field">
+                            <label>続柄：</label>
+                            <input type="text" name="guest${guestCount}_relation" placeholder="妻・子etc…">
+                        </div>
+                    `;
+
+                    guestList.appendChild(guestBlock);
+                });
+
+            });
+        </script>
+
+
+
+
+
+
+
+        <script>
+            const scriptURL = "https://script.google.com/macros/s/AKfycbzLR7W7kbSEz1wKaIFtVk6MGJve6uIOajhDdvJ-WCu5OAlU7tjwfaDoSKPJlscRNU6U/exec";
+
+            document.getElementById("rsvpForm").addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData.entries());
+
+                fetch(scriptURL, {
+                    method: "POST",
+                    body: JSON.stringify(data)
+                })
+                    .then(res => res.json())
+                    .then(res => {
+                        alert("送信完了しました！");
+                        this.reset();
+                    })
+                    .catch(err => {
+                        alert("送信に失敗しました…");
+                        console.error(err);
+                    });
+            });
+        </script>
+
+    </body>
+
+</html>
