@@ -1,1 +1,792 @@
+@charset"UTF-8";
+/* PC用（画面幅701px以上） */
+
+    html{
+        scroll-behavior:smooth;
+       
+        
+        
+    }
+    header {
+        background-color: rgb(174, 204, 201, .5);
+        padding-top: 1px;
+        position: fixed;
+        top: 0;
+        margin: 0;
+        width: 100%;
+        height: 70px;
+        z-index: 1;
+        padding: 0;
+    }
+    .main-nav {
+        display: flex;
+        font-family: "Lobster", sans-serif;
+        font-size: 1.25rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        justify-content: flex-end; /*右寄せ*/
+        margin: 0;
+        padding: 0;
+        margin-top: 34px;
+        list-style: none;
+        text-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+.main-nav li{
+    margin-right:36px;
+    }
+.main-nav a{
+    color:#432;
+}
+.main-nav a:hover{
+    color:#0bd;
+}
+
+    body {
+        background-color: rgb(174, 204, 201, .5) ;
+        text-align: center;
+        font-weight:bold;
+    }
+    #welcom {
+        background-image: url(images/0072.jpg);
+        background-repeat: no-repeat;
+        background-size:cover; /*1500px; OK*/
+        background-position: 40% center;
+        margin-top: 0px;
+        width: 100%;
+        height: 100vh;
+        min-height: 200vh; /*OK*/
+        scroll-snap-type: x;
+        line-height: 2;
+    }
+
+   
+
+   h1 {
+        font-family: "Lobster", sans-serif;
+        font-size: 80px;
+        font-weight: bold;
+        font-style: normal;
+        color: rgb(174, 204, 201);
+        padding-top: 16rem;
+        text-shadow: 1px 1px 0 #fff, 2px 2px 6px rgba(0,0,0,0.25);
+    }   
+
+    h2 {
+        font-family: "Lobster", sans-serif;
+        font-size: 45px;
+        font-weight: bold;
+        color: rgb(174, 204, 201);
+        padding-top: 0px;
+        text-shadow: 1px 1px 0 #fff, 2px 2px 6px rgba(0,0,0,0.25);
+        /*mix-blend-mode: overlay; 画像と文字を重ねる*/
+    }
+
+    .fadein {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 3s ease-out forwards;
+    }
+
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /*.greeting {
+        text-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        font-family: "Zen Maru Gothic", sans-serif;
+        font-size: 16px;
+    }*/
+
+    .greeting2 {
+        font-family: "Lobster", sans-serif;
+        font-size: 60px;
+        color: rgb(109, 58, 43);
+        text-shadow: 1px 1px 0 #fff, 2px 2px 6px rgba(0,0,0,0.25);
+    }
+
+    
+    .greeting {
+        font-family: "Zen Antique", serif;
+        font-weight: bold;
+        font-style: normal;
+    }
+
+
+
+
+    .greeting {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 3s ease-out forwards;
+        text-shadow: 1px 1px 0 #fff, 2px 2px 6px rgba(0,0,0,0.25);
+    }
+    .flower{
+        content: "";
+        position: absolute;
+        bottom:-30px; /* ← ちょこん感の調整ポイント */
+        right: 400px; /* ← 文字の右にちょこん */
+        width: 150px; /* ← 猫の大きさ */
+        height: 150px;
+        background-image: url("images/11.png");
+        background-size: 200px;
+        background-repeat: no-repeat;
+        background-position: center;
+        mix-blend-mode: overlay; /* ← これが効く！ */
+        opacity: 0.8;
+        /* 文字の後ろに置く */
+        pointer-events: none;
+    }
+
+
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    #background {
+        
+    }
+
+    .profile2 {
+        font-family: "Lobster", sans-serif;
+        font-size: 70px;
+        font-weight: bold;
+        color: rgb(109, 58, 43);
+        padding: 70px 0px 0px 0px;
+        text-shadow: 1px 1px 0 #fff, 2px 2px 6px rgba(0,0,0,0.25);
+    }
+    .profile {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column; /* ← ここだけ縦並び */
+        gap: 60px; /* groom と bride の間隔 */
+    }
+
+        .profile img {
+            opacity: 0;
+            transform: scale(0.95);
+            animation: photoIn 2.5s ease-out forwards;
+        }
+
+    @keyframes photoIn {
+        0% {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+/*おにぎり*/
+
+    .profile-container {
+        display: flex;
+        justify-content: center; /* 横方向中央寄せ */
+        align-items: center; /* 画像とテキストの高さを揃える */
+        gap: 40px; /* 画像とテキストの間隔 */
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 60px 20px;
+    }
+
+    /* 画像 */
+    .groom-image img {
+        width: 250px;
+        height: 400px; /* brideと揃える */
+        object-fit: cover;
+        margin-top: 30px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.15), 0 8px 20px rgba(0,0,0,0.15);
+        border-radius: 10px;
+    }
+
+    /* テキスト全体 */
+    .groom-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-family: "Zen Antique", serif;
+        font-size: 16px;
+        text-align: center;
+        line-height: 1.8;
+        mix-blend-mode: overlay;
+        text-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .groom-title {
+        position: relative;
+        display: inline-block;
+        font-size: 40px;
+        z-index: 1;
+        display: inline-block; /* ← これが超重要！ */
+        /*border-bottom: 1px solid rgb(109, 58, 43);*/
+        
+        
+    }
+
+        .groom-title .cat-bg {
+            content: "";
+            position: absolute;
+            
+            bottom: 25px; /* ← ちょこん感の調整ポイント */
+            right: -45px; /* ← 文字の右にちょこん */
+            width: 120px; /* ← 猫の大きさ */
+            height: 60px;
+            background-image: url("images/02.png");
+            background-size: 120px;
+            background-repeat: no-repeat;
+            background-position: center;
+            mix-blend-mode: overlay; /* ← これが効く！ */
+            opacity: 0.6;
+             /* 文字の後ろに置く */
+            pointer-events: none;
+        }
+
+    .groom-title2 {
+        position: relative; /* ← これがないと .film-bg が表示されない！ */
+    }
+
+    .groom-title2 .film-bg {
+        content: "";
+        position: absolute;
+        bottom:-70px; /* ← ちょこん感の調整ポイント */
+        right:40px; /* ← 文字の右にちょこん */
+        width: 300px; /* ← 猫の大きさ */
+        height: 500px;
+        background-image: url("images/06.png");
+        background-size: 450px;
+        background-repeat: no-repeat;
+        background-position: center;
+        mix-blend-mode: overlay; /* ← これが効く！ */
+        opacity: 0.25;
+        /* 文字の後ろに置く */
+        pointer-events: none;
+    }
+    /* タイトル（Groom） */
+    .groom-title {
+        font-family: "Lobster", sans-serif;
+        font-size: 70px;
+        color: rgb(98,137,164); /* groomカラー */
+        text-shadow: 1px 1px 0 #fff, 2px 2px 6px rgba(0,0,0,0.25);
+        margin-bottom: 20px;
+    }
+  
+   
+
+/*さっきー*/
+  
+
+    .profile-container {
+        display: flex;
+        justify-content: center; /* 横方向中央寄せ */
+        align-items: flex-start; /* 上揃え */
+        gap: 40px; /* 画像とテキストの間隔 */
+        max-width: 900px;
+        margin: 0 auto; /* 画面中央に配置 */
+        padding: 60px 20px;
+        align-items: center; /* 子要素の高さを中央揃えにする */
+    }
+
+    .bride-image img {
+        width: 250px;
+        height: 400px; /* 高さを固定して揃える */
+        object-fit: cover; /* はみ出さずに収める */
+        margin-top: 30px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.15), 0 8px 20px rgba(0,0,0,0.15);
+        
+    }
+
+    .bride-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* 縦方向の中央揃え */
+        text-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        font-family: "Zen Antique", serif;
+        font-size: 16px;
+        text-align: center;
+        line-height: 1.8;
+    }
+
+    .bride-title {
+        font-family: "Lobster", sans-serif;
+        font-size: 70px;
+        color: rgb(213,141,157);
+        margin-bottom: 20px;
+        text-shadow: 1px 1px 0 #fff, 2px 2px 6px rgba(0,0,0,0.25);
+    }
+
+    .bride-title2 {
+        position: relative;
+        display: inline-block;
+        /*font-size: 40px;*/
+        z-index: 1;
+        display: inline-block; /* ← これが超重要！ */
+        /*border-bottom: 1px solid rgb(109, 58, 43);*/
+    }
+
+        .bride-title2 .tantei-bg {
+            content: "";
+            position: absolute;
+            bottom: 230px; /* ← ちょこん感の調整ポイント */
+            right: -30px; /* ← 文字の右にちょこん */
+            width: 140px; /* ← 猫の大きさ */
+            height: 160px;
+            background-image: url("images/09.png");
+            background-size: 130px;
+            background-repeat: no-repeat;
+            background-position: center;
+            mix-blend-mode: overlay; /* ← これが効く！ */
+            opacity: 0.6;
+            /* 文字の後ろに置く */
+            pointer-events: none;
+        }
+        .bride-title2 .asiato-bg {
+            content: "";
+            position: absolute;
+            bottom: -100px; /* ← ちょこん感の調整ポイント */
+            right: 75px; /* ← 文字の右にちょこん */
+            width: 265px; /* ← 猫の大きさ */
+            height: 650px;
+            background-image: url("images/10.png");
+            background-size: 380px;
+            background-repeat: no-repeat;
+            background-position: center;
+            mix-blend-mode: overlay; /* ← これが効く！ */
+            opacity: 0.25;
+            /* 文字の後ろに置く */
+            pointer-events: none;
+        }
+
+    .bride-title3 .asiato-bg2 {
+        content: "";
+        position: absolute;
+        bottom: -120px;
+        right: -20px;
+        width: 265px;
+        height: 550px;
+        background-image: url("images/10.png");
+        background-size: 380px;
+        background-repeat: no-repeat;
+        background-position: center;
+        mix-blend-mode: overlay;
+        opacity: 0.25;
+        /* transform: scaleX(-1);*/
+    }
+
+        #countdown {
+            font-family: "Lobster", sans-serif; /* 文字のフォント */
+            opacity: 0.8;
+            font-weight: bold; /* 太字にする */
+            color: rgb(255,20,147,0.5); /* 文字色（ピンク系） */
+            text-shadow: 1px 1px 0 #fff, 2px 2px 6px rgba(0,0,0,0.1);
+            line-height: 5px; /* 中央揃え */
+            padding-top: 70px; /* 上に余白をつける */
+        }
+
+        #countdownbox {
+            font-size: 80px; /* 文字の大きさ */
+            text-align: center;
+            background-image: url(images/0007.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 40% 30%; /*細かい画像の位置を調整*/
+            height: 350px; /*背景の枠の高さ*/
+        }
+
+        .countdownbox2 {
+            font-family: "Lobster", sans-serif; /* 文字のフォント */
+            font-size: 80px; /* 文字の大きさ */
+            font-weight: bold; /* 太字にする */
+            color: rgb(255,20,147,0.5); /* 文字色（ピンク系） */
+            text-shadow: 1px 1px 0 #fff, 2px 2px 6px rgba(0,0,0,0.1);
+            padding-top: 20px;
+            opacity: 0.8;
+        }
+
+        .schedule {
+            display: flex; /* 子要素を横並びにする（flexboxを使う） */
+            justify-content: center; /* 子要素を左右方向の中央に揃える */
+            flex-direction: column;
+            font-family: "Zen Antique", serif;
+            font-size: 18px;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            width: 100%;
+            gap: 25px; /* 子要素同士の間隔を40pxあける */
+            margin-top: 70px; /* 上に40pxの余白をつける */
+        }
+
+        #access {
+            margin-top: 50px;
+        }
+
+        .place {
+            font-family: "Lobster", sans-serif;
+            font-size: 70px;
+            font-weight: bold;
+            text-align: center;
+            color: rgb(109, 58, 43);
+            text-shadow: 1px 1px 0 #fff, 2px 2px 6px rgba(0,0,0,0.25);
+        }
+
+
+        .access2 {
+            display: flex;
+            justify-content: center;
+            line-height: 1.5;
+        }
+
+        .access3 {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            font-family: "Zen Antique", serif;
+            font-size: 18px;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            width: 60%;
+            margin-top: 10px;
+            gap: 25px; /* 子要素同士の間隔を40pxあける */
+            margin-top: 40px; /* 上に40pxの余白をつける */
+        }
+
+.iframe iframe {
+    margin-top: 70px;
+    width: 70%;
+    height: 350px; /* ← ここが超重要！ */
+    border: none; /* 枠線が気になる場合はこれも */
+    aspect-ratio: 4 / 3; /* ← これが最強！*/
+}
+   
+
+
+    .btn {
+        color: #fff;
+        font-family: "Zen Antique", serif;
+        font-size: 1.8rem;
+        border-radius: 8px;
+        text-decoration: none;
+        background-color: rgb(109, 58, 43, .5);
+        box-shadow: 0 3px rgb(109, 97, 92);
+        text-shadow: 1px 1px 0 #000, 1px 1px 6px rgba(0,0,0,0.25);
+        position: relative;
+        display: inline-block;
+        top: -2px;
+        padding: 14px,28px;
+        margin-top: 40px;
+        margin-bottom: 70px;
+    }
+
+        .btn:hover {
+            box-shadow: 0 3px rgb(57, 51, 48);
+            top: 1px;
+        }
+
+    .form {
+        font-family: "Zen Antique", serif;
+        font-weight: bold;
+        border-style: double;
+        border-width: 4px;
+        border-color: rgb(109, 58, 43, .5);
+        text-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        margin-top: 50px;
+        margin-bottom: 20px;
+        padding: 10px 20px;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .scrollfade {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 1.2s ease-out;
+    }
+
+        .scrollfade.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    /* 横2列に並べるギャラリー */
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 横2列 */
+        gap: 16px; /* 画像の間隔 */
+        padding: 100px;
+    }
+        /* 各画像の枠（正方形にする） */
+        .gallery-grid a {
+            width: 200px; /* 正方形のサイズ（調整OK） */
+            aspect-ratio: 1 / 1; /* 正方形に固定 */
+            overflow: hidden; /* はみ出しを隠す */
+            border-radius: 10px; /* 角を少し丸く */
+            display: block;
+        }
+        /* 画像そのものの見た目 */
+        .gallery-grid img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 正方形にきれいに収める */
+            display: block;
+            transition: transform 0.3s ease, filter 0.3s ease;
+            filter: grayscale(100%); /* ホバー前は白黒 */
+        }
+            /* ホバー時のふわっと拡大＆カラー */
+            .gallery-grid img:hover {
+                transform: scale(1.08);
+                filter: grayscale(0%);
+            }
+    /* Luminous の拡大画像が巨大化しないようにする */
+    .luminous-lightbox img {
+        max-width: 90vw;
+        max-height: 90vh;
+        object-fit: contain;
+    }
+    /* スマホ用（画面幅700px以下）PC終了してから作成 */
+    /* L-size：大きめスマホ（415〜480px） */
+    /* L-size：大きめスマホ（415〜425px） */
+    @media (max-width: 768px) {
+
+        header {
+            height: 65px;
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 5px;
+            line-height: 5px;
+            margin-top: 24px;
+        }
+
+            .main-nav a {
+                font-size: 10px;
+                padding: 8px 12px;
+            }
+
+
+
+
+        #welcom {
+            background-size: cover;
+            background-position: center top;
+            height: auto;
+            min-height: 320px;
+        }
+
+
+
+        h1 {
+            font-size: 36px;
+            padding-top: 5rem;
+        }
+
+        h2 {
+            font-size: 26px;
+        }
+
+        .greeting2 {
+            font-size: 28px;
+        }
+
+        .greeting {
+            font-size: 11px;
+        }
+
+        .flower {
+            bottom: -45px;
+            right: 30px;
+            width: 150px;
+            height: 150px;
+            background-size: 150px;
+        }
+
+        .profile2 {
+            font-size: 32px;
+            padding-top: 50px;
+        }
+
+        .profile-container {
+            flex-direction: column;
+            gap: 30px;
+            padding: 50px 20px;
+        }
+
+        .groom-image img {
+            width: 200px;
+            height: auto;
+            margin-top: 12px;
+        }
+
+        .groom-info {
+            font-size: 11px;
+            line-height: 1.8;
+        }
+
+        .groom-title {
+            font-size: 32px;
+        }
+
+            .groom-title .cat-bg {
+                bottom: 6px;
+                right: -20px;
+                width: 85px;
+                height: 50px;
+                background-size: 85px;
+            }
+
+        .groom-title2 .film-bg {
+            width: 180px;
+            height: 260px;
+            background-size: 260px;
+            bottom: -8px;
+            right: 45px;
+        }
+
+        .profile-container {
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+            padding: 40px 16px;
+        }
+
+        .bride-image img {
+            width: 200px;
+            height: auto;
+            margin-top: 12px;
+        }
+
+        .bride-info {
+            font-size: 11px;
+            line-height: 1.8;
+            padding: 0 12px;
+        }
+
+        .bride-title {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .bride-title2 .tantei-bg {
+            bottom: 145px;
+            right: -20px;
+            width: 100px;
+            height: 120px;
+            background-size: 85px;
+        }
+
+        .bride-title2 .asiato-bg {
+            bottom: -90px;
+            right: 40px;
+            width: 198px;
+            height: 458px;
+            background-size: 280px;
+        }
+
+        .bride-title3 .asiato-bg2 {
+            bottom: -100px;
+            right: -10px;
+            width: 198px;
+            height: 458px;
+            background-size: 280px;
+        }
+
+        #countdown {
+            font-size: 16px;
+            padding-top: 40px;
+            line-height: 1.2;
+        }
+
+        #countdownbox {
+            font-size: 32px;
+            height: 150px;
+            background-position: 35% center top;
+        }
+
+        .countdownbox2 {
+            font-size: 32px;
+            padding-top: 12px;
+        }
+
+        .schedule {
+            font-size: 11px;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        #access {
+            margin-top: 40px;
+        }
+
+        .place {
+            font-size: 32px;
+        }
+
+        .access2 {
+            flex-direction: column;
+            align-items: center;
+            line-height: 1.8;
+        }
+
+        .access3 {
+            font-size: 11px;
+            width: 90%;
+            margin-top: 20px;
+            gap: 20px;
+        }
+
+        .iframe iframe {
+            width: 70%;
+            height: 200px; /* ← ここが超重要！ */
+            aspect-ratio: 4 / 3; /* ← これが最強！*/
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 横2列 */
+            gap: 16px; /* 画像の間隔 */
+            padding: 100px;
+        }
+            /* 各画像の枠（正方形にする） */
+            .gallery-grid a {
+                width: 100px; /* 正方形のサイズ（調整OK） */
+                aspect-ratio: 1 / 1; /* 正方形に固定 */
+                overflow: hidden; /* はみ出しを隠す */
+                border-radius: 10px; /* 角を少し丸く */
+                display: block;
+            }
+
+        .form {
+            font-size: 11px;
+            width: 80%;
+            padding-top: 10px;
+        }
+
+        .btn {
+            font-size: 0.9rem;
+            ;
+        }
+    }
+
+   
+
 
