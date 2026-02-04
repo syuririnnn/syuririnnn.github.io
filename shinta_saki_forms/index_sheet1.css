@@ -15,11 +15,11 @@
         letter-spacing: normal;
         background-image: url(images/0091.jpg); /*OK*/
         background-repeat: no-repeat; /*OK*/
-        background-size: contain; /*OK*/
+        background-size: cover; /*OK*/
         background-position: center; /*OK*/
         
-        min-height: 200vh; /*OK*/
-        scroll-snap-type: x;
+        /*min-height: 200vh; /*OK*/
+        /*scroll-snap-type: x;*/
     }
 
     h1 {
