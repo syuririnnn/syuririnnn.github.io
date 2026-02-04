@@ -17,7 +17,7 @@
         background-repeat: no-repeat; /*OK*/
         background-size: contain; /*OK*/
         background-position: center; /*OK*/
-        background-attachment: fixed;
+        
         min-height: 200vh; /*OK*/
         scroll-snap-type: x;
     }
