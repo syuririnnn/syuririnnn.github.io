@@ -1,1 +1,350 @@
+<!DOCTYPE html>
+<html lang="ja">
 
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>saki wedding HP</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/luminous-lightbox@2.4.0/dist/luminous-basic.min.css">
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><!---スマホでの表示が安定する--->
+    <link rel="stylesheet" href="hp_1.css" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Kaisei+Decol&family=Klee+One&family=Kosugi+Maru&family=Lobster&family=Shippori+Antique+B1&family=Tangerine:wght@400;700&family=Zen+Antique&family=Zen+Maru+Gothic&family=Zen+Old+Mincho&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="welcom">
+        <header>
+            <nav>
+               
+                <ul class="main-nav">
+                    <li><a href="#welcom">sitetop</a></li>
+                    <li><a href="#background">profile</a></li>
+                    <li><a href="#countdownbox">countdown</a></li>
+                    <li><a href="#access">accesse</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+        <h1 class="fadein">welcome to our wedding site</h1>
+        <h2 class="fadein">2026.05.16 Saturday</h2>
+    </div>
+
+    <div class="greeting2 scrollfade">
+        <div class="greeting2">
+            <h3>
+                Greeting
+            </h3>
+
+        </div>
+    </div>
+    <div class="greeting scrollfade">
+        <div class="greeting">
+
+            <p>
+                謹啓
+            </p>
+            <p>
+                余寒の候　皆様におかれましては
+            </p>
+            <p>
+                ますますご清祥のこととお慶び申し上げます
+            </p>
+            <p>
+                私たちは2024年4月29日に入籍いたしました
+            </p>
+            <p>
+                つきましては日頃お世話になっている皆様に
+            </p>
+            <p>
+                ご挨拶並びに小宴を催したく存じます
+            </p>
+            <p>
+
+                ご多用中まことに恐縮ではございますが
+
+            </p>
+            <p>
+                ぜひご出席をお願いしたく　ご案内申し上げます
+            </p>
+            <p>
+                なお お手数ではございますが
+            </p>
+            <p>
+                2月28日までにお返事を頂けますと幸いです
+            </p>
+
+            <p>
+                謹白　
+            </p>
+            <p>
+                令和８年2月吉日
+            </p>
+            <p>
+                新郎　庄司 晋太　  新婦　正原 早妃
+            </p>
+            <div class="flower">
+
+            </div>
+        </div>
+    </div>
+    <div id="background">
+        <div class="profile2  scrollfade ">
+            <p>Profile</p>
+        </div>
+
+        <div class="profile scrollfade">
+
+            <div class="profile">
+                <div class="profile-container">
+
+                    <div class="groom-image ">
+                        <img src="images/0182.jpg" alt="groom photo">
+                    </div>
+
+
+
+                    <div class="groom-info">
+                        <h3 class="groom-title">
+                            Groom
+                            <span class="cat-bg"></span>
+                        </h3>
+
+
+
+                        <div class="camera-image"></div>
+
+                        <p>庄司　晋太</p>
+                        <p>1999年10月28日生</p>
+                        <p>長崎県 対馬市 出身</p>
+
+                        <p class="groom-title2">
+                            趣味: 写真や動画の撮影と編集
+                            <span class="film-bg"></span>
+                        </p>
+
+                        <p p class="groom-title3">
+                            入籍して約2年<br>
+                            ようやく結婚式を挙げることになりました<br>
+                            あたたかく見守っていただけますと幸いです
+                            <span class="film-bg2"></span>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="profile ">
+
+            <div class="profile-container">
+
+                <div class="bride-image scrollfade">
+                    <img src="images/0190.jpg" alt="sakiのピン">
+                </div>
+
+                <div class="bride-info scrollfade">
+                    <h3 class="bride-title">
+                        Bride
+
+                    </h3>
+
+                    <p>正原　早妃</p>
+                    <p>1999年08月19日生</p>
+                    <p>福岡県　福岡市　出身</p>
+
+                    <p class="bride-title2">
+                        趣味: 雑貨屋巡り　コナンを本気で観ること
+                        <span class="tantei-bg"></span>
+                        <span class="asiato-bg"></span>
+                    </p>
+
+                    <p class="bride-title3">
+                        私達はこの度結婚式を挙げることになりました<br>
+                        皆様にお会いできることを<br>
+                        心より楽しみにしております
+                        <span class="asiato-bg2"></span>
+                    </p>
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="countdownbox scrollfade">
+            <br /><div id="countdownbox">
+                <div class="countdownbox2">
+                    wedding countdown
+                </div>
+
+                <div id="countdown"></div>  <!-- カウントダウンの数字を表示する箱 -->
+            </div>
+            <script>
+                const weddingDate = new Date("2026-05-16T00:00:00");
+                // ↑ 結婚式の日付を設定（ここを変えれば別の日にもできる）
+
+                function updateCountdown() {
+                    // ↑ カウントダウンを計算して表示する関数（処理のまとまり）
+
+                    const now = new Date();
+                    // ↑ 今の日時を取得（現在時刻）
+
+                    const diff = weddingDate - now;
+                    // ↑ 結婚式の日までの「残り時間（ミリ秒）」を計算
+
+                    if (diff <= 0) {
+                        // ↑ もし結婚式の日を過ぎていたら
+                        document.getElementById("countdown").textContent = "本日が結婚式です♡";
+                        // ↑ 特別メッセージを表示
+                        return;
+                        // ↑ ここで処理を終わらせる
+                    }
+
+                    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                    // ↑ 残り時間を「日」に変換
+
+                    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                    // ↑ 残り時間を「時間」に変換（24時間で割った余り）
+
+                    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+                    // ↑ 残り時間を「分」に変換（60分で割った余り）
+
+                    const seconds = Math.floor((diff / 1000) % 60);
+                    // ↑ 残り時間を「秒」に変換（60秒で割った余り）
+
+                    document.getElementById("countdown").textContent =
+                        ` ${days}day ${hours}h ${minutes}min ${seconds}sec`;
+                    // ↑ 計算した数字を画面に表示する
+                }
+
+                setInterval(updateCountdown, 1000);
+                // ↑ 1秒ごとに updateCountdown を実行する（カウントダウンが動く）
+
+                updateCountdown();
+                // ↑ ページを開いた瞬間にも1回実行して表示する</script>
+        </div>
+
+        <div class="schedule scrollfade">
+
+
+            <div class="schedule">
+                <div class="A">会場 : アルマリアン福岡</div>
+                <div class="B">日時</div>
+                <div class="C"> 令和8年5月16日</div>
+
+                <div class="E">
+                    挙式　11：00～
+                </div>
+                <div class="F">
+                    披露宴　12:00～14:40
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+        <div class="access scrollfade">
+
+            <div id="access">
+                <br />
+                <div class="place">Access</div>
+
+                <div class="access2">
+                    <div class="access3">
+                        〒810-0021
+                        <br /> 福岡市中央区今泉1丁目22−17 アルマリアン福岡
+                        <br />
+                        <br /> 西鉄天神大牟田線「西鉄福岡（天神）駅」南口より徒歩1分
+                        <br />地下鉄七隈線「天神南駅」西12b出口より徒歩3分
+                        <br />地下鉄空港線「天神駅」西12b出口より徒歩7分
+                        <br />駐車場なし
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="google scrollfade">
+
+            <div class="iframe">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.6986751519967!2d130.3972186751156!3d33.58717207333552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x354191931df9994d%3A0xa925bc32ecf8f948!2z44Ki44Or44Oe44Oq44Ki44Oz56aP5bKh!5e0!3m2!1sja!2sjp!4v1768276363675!5m2!1sja!2sjp" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="gallery-grid scrollfade">
+        <a class="grid-gallery" href="images/0015.jpg">
+            <img src="images/0015.jpg" alt="photo1">
+        </a>
+        <a class="grid-gallery" href="images/0058.jpg">
+            <img src="images/0058.jpg" alt="photo2">
+        </a>
+        <a class="grid-gallery" href="images/0071.jpg">
+            <img src="images/0071.jpg" alt="photo3">
+        </a>
+        <a class="grid-gallery" href="images/0085.jpg">
+            <img src="images/0085.jpg" alt="photo3">
+        </a>
+        <a class="grid-gallery" href="images/0094.jpg">
+            <img src="images/0094.jpg" alt="photo3">
+        </a>
+        <a class="grid-gallery" href="images/0121.jpg">
+            <img src="images/0121.jpg" alt="photo3">
+        </a>
+        <a class="grid-gallery" href="images/0156.jpg">
+            <img src="images/0156.jpg" alt="photo3">
+        </a>
+        <a class="grid-gallery" href="images/0172.jpg">
+            <img src="images/0172.jpg" alt="photo3">
+        </a>
+        <!-- しゅりの好きな枚数だけ追加OK -->
+    </div>
+
+    <div class="form scrollfade">
+        ご出席して頂ける皆様には後日招待状を郵送させて頂きますので
+        <br />ご記入とご返送の程よろしくお願いいたします
+    </div>
+
+    <br /><a class="btn" href="https://syuririnnn.github.io/shinta_saki_forms/">　招待状に回答する　</a>
+
+    <script>
+        const targets = document.querySelectorAll('.scrollfade');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        });
+
+        targets.forEach(target => observer.observe(target));
+    </script>
+    <script>
+        const toggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.menu');
+
+        toggle.addEventListener('click', () => {
+            menu.classList.toggle('open');
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/luminous-lightbox@2.4.0/dist/luminous.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luminous-lightbox@2.4.0/dist/luminous-gallery.min.js"></script>
+    <script src="js/saki.luminous.js"></script>
+
+
+
+</body>
+</html>
+</html>
